@@ -1,4 +1,4 @@
-import express, { response } from 'express'
+import express from 'express'
 
 const app = express()
 const port = 3000
@@ -15,7 +15,13 @@ const port = 3000
 app.get("/test", (req, res) => {
     // req => input
     // res => output
-    response.send("Olá NLW")
+    res.send("Olá NLW")
+})
+
+app.post("/test-post", (req, res) => {
+    // req => input
+    // res => output
+    res.send("Olá NLW Rota post")
 })
 
 app.listen(port, () => {console.log(`Server running on ${port}`)})
