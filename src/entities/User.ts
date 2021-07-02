@@ -14,6 +14,9 @@ class User {
 
   @Column()
   admin: boolean;
+  
+  @Column()
+  password: string;
 
   @CreateDateColumn()
   create_at: Date;
@@ -21,8 +24,9 @@ class User {
   @UpdateDateColumn()
   updated_at: Date;
 
+
   constructor() {
-    if(!this.id /* if a new user */ ) {
+    if(!this.id ) {
       this.id = uuid()
     }
   }
