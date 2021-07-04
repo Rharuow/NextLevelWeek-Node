@@ -23,8 +23,6 @@ class AuthenticateUserService {
 
       const passwordMatch = await compare(password, user.password)
 
-      console.log(passwordMatch)
-
       if(!passwordMatch) {
         throw new Error("Email/Password incorrect")
       }
