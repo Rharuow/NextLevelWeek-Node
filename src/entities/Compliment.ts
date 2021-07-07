@@ -21,6 +21,7 @@ class Compliment {
 
     @JoinColumn({name: "user_receiver"})
     @ManyToOne(() => User)
+    userReceiver: User
 
     @Column()
     tag_id: string;
