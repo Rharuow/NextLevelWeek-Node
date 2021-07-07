@@ -8,6 +8,7 @@ interface IPayload {
 
 export function ensureAuthenticated(req: Request, res: Response, next: NextFunction) {
 
+  try {
   // Get token
 
   // split separeting string coming authorization headears field at 'Bearer code_token
@@ -19,7 +20,6 @@ export function ensureAuthenticated(req: Request, res: Response, next: NextFunct
 
   // Validate token
 
-  try {
     const { sub } = verify(token, "172e00a03eee6f31bb9aaf498ce00a5b") as IPayload
     
     // Recovery info user by token
