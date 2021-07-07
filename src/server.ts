@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction} from 'express'
 import "express-async-errors"
 import 'reflect-metadata'
+import cors from 'cors'
 import './database'
 import { router } from './router'
 
@@ -8,6 +9,7 @@ const app = express()
 const port = 3000
 
 app.use(express.json())
+app.use(cors())
 
 app.use(router)
 
